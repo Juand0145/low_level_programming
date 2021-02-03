@@ -1,6 +1,6 @@
 #include <stdio.h>
 
- /**
+/**
  * main - prints a phrase
  */
 int main(void)
