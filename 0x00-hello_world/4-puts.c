@@ -1,10 +1,10 @@
-B#include <stdio.h>
+#include <stdio.h>
 
  /**
  *main prints Programming is like building a multilingual puzzle
  */
 int main(void)
 {
-	puts("\"Programming is like building a multilingual puzzle);
+	puts("\"Programming is like building a multilingual puzzle");
 	return (0);
 }
