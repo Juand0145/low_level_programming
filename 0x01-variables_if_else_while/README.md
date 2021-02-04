@@ -1,0 +1,1 @@
+In this directory we will see some commands to understand how loops in C works
