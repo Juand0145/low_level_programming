@@ -1,9 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
 /**
- * main - Define the las digit of a random number
- * Return: If there is no problem should be 0
+ * main - Print s the last digit of a number
+ * Return: if there is no problem should be 0
  */
 int main(void)
 {
