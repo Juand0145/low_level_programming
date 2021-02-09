@@ -1,7 +1,8 @@
-#include "_putchar.c"
+#include "holberton.h"
+
 /**
- * main - print holberton
- * Return: If thre is no error should be 0
+ * main -  prints Holberton, followed by a new line
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
