@@ -1,0 +1,1 @@
+If this directory we will find some projects related to loops
