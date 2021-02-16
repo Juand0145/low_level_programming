@@ -8,6 +8,7 @@
 int _atoi(char *s)
 {
 	int i, n, sign, count, j, mult;
+
 	sign = 1;
 	count = 0;
 	mult = 1;
@@ -23,7 +24,7 @@ int _atoi(char *s)
 
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			count ++;
+			count++;
 		}
 	}
 
