@@ -1,5 +1,5 @@
 In this directory we will find a list of progrmas corresponding to the correct
-uses of arguments to main with th objective to fully understand their
+uses of arguments to main with the objective to fully understand their
 aplications.
 
 0-whatsmyname.c is a program that prints its name, followed by a new line.
