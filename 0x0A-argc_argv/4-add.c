@@ -25,7 +25,6 @@ int main(int argc, char *argv[])
 	int i, sum;
 
 	sum = 0;
-	(void)argv;
 
 	if (argc == 1)
 	{
