@@ -22,7 +22,7 @@ int zero_diff(char *s)
  */
 int main(int argc, char *argv[])
 {
-	int i, sum;
+	long int i, sum;
 
 	sum = 0;
 
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 		sum += atoi(argv[i]);
 	}
 
-	printf("%d\n", sum);
+	printf("%ld\n", sum);
 
 	return (0);
 }
