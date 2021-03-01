@@ -8,10 +8,17 @@
  */
 int zero_diff(char *s)
 {
-	if (s[0] == '0')
-		return (0);
+	int i;
 
-	return (1);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] < '0' || s[i] > '9')
+		{
+			return (1);
+		}
+	}
+
+	return (0);
 }
 
 /**
