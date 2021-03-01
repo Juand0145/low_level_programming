@@ -3,7 +3,7 @@
 
 /**
  * zero_diff - differentiate the number 0 from a string
- * @s - the string to analise
+ * @s: The string to analise
  * Return: Return 0 if is number and 1 if is not
  */
 int zero_diff(char *s)
