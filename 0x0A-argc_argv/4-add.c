@@ -1,5 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+/**
+ * zero_diff - differentiate the number 0 from a string
+ * @s - the string to analise
+ * Return: Return 0 if is number and 1 if is not
+ */
+int zero_diff(char *s)
+{
+	if (s[0] == '0')
+		return (0);
+
+	return (1);
+}
+
 /**
  * main - a program that adds positive numbers.
  * @argc:The input integer values
@@ -11,6 +25,7 @@ int main(int argc, char *argv[])
 	int i, sum;
 
 	sum = 0;
+	(void)argv;
 
 	if (argc == 1)
 	{
@@ -19,7 +34,7 @@ int main(int argc, char *argv[])
 	}
 	for (i = 2; i < argc; i++)
 	{
-		if (atoi(argv[i]) == 0)
+		if (atoi(argv[i]) == 0 && zero_diff(argv[i]))
 		{
 			printf("Error\n");
 			return (1);
