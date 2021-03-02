@@ -6,6 +6,7 @@
  * chars, and initializes it with a specific char.
  * @size: The size of the array
  * @c: the character we want to replicate
+ * Return: if size is 0 return NULL if array is 0 return 0 the return the array
  */
 char *create_array(unsigned int size, char c)
 {
