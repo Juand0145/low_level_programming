@@ -1,6 +1,6 @@
 In this directory we will continue working with Malloc and free command but now
 we add Calloc and realloc, for the purpose of this task of practicing and fully
-understanding cpcept of allocating and relocating memory.
+understanding cocept of allocating and relocating memory.
 
 0-malloc_checked.c is a function that allocates memory using malloc.
 
