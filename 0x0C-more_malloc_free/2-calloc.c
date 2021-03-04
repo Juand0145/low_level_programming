@@ -12,14 +12,27 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *matrix;
+	unsigned int i = 0;
+	char *s;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	matrix = calloc(nmemb, size);
+	matrix = malloc(nmemb * size);
 
 	if (!matrix)
 		return (NULL);
+
+	s = (char *)matrix;
+
+	if (s != NULL)
+	{
+		while (i < (nmemb * size))
+			s[i++] = 0;
+
+		return (s);
+	}
+
 
 	return (matrix);
 }
