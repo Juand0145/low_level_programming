@@ -3,22 +3,6 @@
 #include <stdlib.h>
 
 /**
- * counter - counte the characters ina string_nconcat
- * @s: the string
- * Return: The number of character in the string
- */
-int counter(char *s)
-{
-	unsigned int i;
-
-	i = 0;
-	while (s && s[i])
-		i++;
-
-	return (i);
-}
-
-/**
  * string_nconcat - a function that concatenates two
  * strings.
  * @s1: string 1
@@ -28,36 +12,35 @@ int counter(char *s)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int lenght_1, lenght_2, i, j;
-	char *concat;
+	char *s;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
-	lenght_1 = counter(s1);
-	lenght_2 = counter(s2);
+	while (s1 && s1[len1])
+		len1++;
+	while (s2 && s2[len2])
+		len2++;
 
-	if (n < lenght_2)
-		concat = calloc(lenght_1 + n + 1, sizeof(char));
-
+	if (n < len2)
+		s = malloc(sizeof(char) * (len1 + n + 1));
 	else
-		concat = calloc(lenght_1 + lenght_2 + 1, sizeof(char));
+		s = malloc(sizeof(char) * (len1 + len2 + 1));
 
-
-	if (!concat)
+	if (!s)
 		return (NULL);
 
-
-	for (i = 0; i < lenght_1; i++)
-		concat[i] = s1[i];
-
-	j = 0;
-
-	while (i < (lenght_1 + n) && s2[j] != '\0')
+	while (i < len1)
 	{
-		concat[i] = s2[j];
+		s[i] = s1[i];
 		i++;
-		j++;
 	}
 
-	concat[i] = '\0';
+	while (n < len2 && i < (len1 + n))
+		s[i++] = s2[j++];
 
-	return (concat);
+	while (n >= len2 && i < (len1 + len2))
+		s[i++] = s2[j++];
+
+	s[i] = '\0';
+
+	return (s);
 }
