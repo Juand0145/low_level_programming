@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
@@ -10,12 +9,12 @@
  */
 void *malloc_checked(unsigned int b)
 {
-	void *ch;
+	void *p;
 
-	ch = malloc(b);
+	p = malloc(b);
 
-	if (ch == NULL)
+	if (p == NULL)
 		exit(98);
 
-	return (ch);
+	return (p);
 }
