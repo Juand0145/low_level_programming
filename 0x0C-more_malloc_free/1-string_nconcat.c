@@ -28,21 +28,34 @@ int counter(char *s)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int lenght, i, j;
+	unsigned int lenght_1, lenght_2, i, j;
 	char *concat;
 
-	lenght = counter(s1);
+	lenght_1 = counter(s1);
+	lenght_2 = counter(s2);
 
-	concat = calloc(lenght + n + 1, sizeof(char));
+	if (n < lenght_2)
+		concat = calloc(lenght_1 + n + 1, sizeof(char));
+
+	else
+		concat = calloc(lenght_1 + lenght_2 + 1, sizeof(char));
+
 
 	if (!concat)
 		return (NULL);
 
-	for (i = 0; i < lenght; i++)
+
+	for (i = 0; i < lenght_1; i++)
 		concat[i] = s1[i];
 
-	for (j = 0; i < (lenght + n); i++, j++)
+	j = 0;
+
+	while (i < (lenght_1 + n) && s2[j] != '\0')
+	{
 		concat[i] = s2[j];
+		i++;
+		j++;
+	}
 
 	concat[i] = '\0';
 
