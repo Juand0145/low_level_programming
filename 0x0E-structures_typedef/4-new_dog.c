@@ -1,6 +1,21 @@
 #include <stdio.h>
 #include "dog.h"
 #include <stdlib.h>
+/**
+ * counter - Count the numebr of character in a string
+ * @s: The strin we want to counter
+ * Return: The number of characters
+ */
+int counter(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+		;
+
+	return (i);
+
+}
 
 /**
  * _strcpy - Copy and string
@@ -33,18 +48,22 @@ char *_strcpy(char *dest, char *src)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *perro;
+	int count_1, count_2;
+
+	count_1 = counter(name);
+	count_2 = counter(owner);
 
 	perro = malloc(sizeof(dog_t));
 	if (perro == NULL)
 		return (NULL);
 
-	perro->name = malloc(sizeof(name));
+	perro->name = malloc(sizeof(char) * (count_1 + 1));
 	if (perro->name == NULL)
 	{
 		free(perro);
 		return (NULL);
 	}
-	perro->owner = malloc(sizeof(owner));
+	perro->owner = malloc(sizeof(char) * (count_2 + 1));
 	if (perro->owner == NULL)
 	{
 		free(perro);
