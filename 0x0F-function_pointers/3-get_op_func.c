@@ -3,7 +3,7 @@
 /**
  * get_op_func - Sarch for teh correct function
  * @s: The operation we want to execute
- * Return = the result of the operation
+ * Return: the result of the operation
  */
 int (*get_op_func(char *s))(int, int)
 {
