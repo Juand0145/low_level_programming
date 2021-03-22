@@ -1,8 +1,7 @@
 ## Learning objectives
 In this directory, we will find a compilation of files that will help us to understand the uses of the linked lists and try to answer the next questions.
-
- 1.How to use linked lists.
- 2.Start to look for the right source of information without too much help.
+ 1.   How to use linked lists.
+  2. Start to look for the right source of information without too much help.
  ## Files
 - 0-print_listint.c is a function that prints all the elements of a `listint_t` list.
 - 1-listint_len.c is a function that returns the number of elements in a linked `listint_t` list.
