@@ -5,7 +5,7 @@
  * beginning of a dlistint_t list.
  * @head: A pointer to the direction of the head of teh list
  * @n: the integer value of the node
- * Return: The new node.
+ * Return: The new_node
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
@@ -23,12 +23,18 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	}
 
 	new_node->n = n;
-	new_node->next = *head;
-	new_node->prev = NULL;
 
-	if (head == NULL)
-		(*head)->prev = new_node;
+	if (*head == NULL)
+	{
+		new_node->next = *head;
+		new_node->prev = NULL;
+		*head = new_node;
+		return (new_node);
+	}
+
+	(*head)->prev = new_node;
+	new_node->next = *head;
 	*head = new_node;
 
-	return (*head);
+	return (new_node);
 }
