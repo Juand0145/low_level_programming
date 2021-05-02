@@ -9,32 +9,47 @@
 */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *temp = *head;
-	unsigned int i = 0;
+	dlistint_t *temp = NULL;
+	dlistint_t *temp2 = NULL;
+	dlistint_t *temp3 = NULL;
+	dlistint_t *temp4 = NULL;
+	unsigned int i = 0, j = 0;
 
-	if (*head == NULL || dlistint_len(temp) < index + 1)
+	if (head == NULL || *head == NULL)
 		return (-1);
-
-	if (!index)
+	if (index == 0 && (*head)->next == NULL)
 	{
-		(*head) = temp->next;
-		if (temp->next)
-			temp->next->prev = NULL;
-		temp->next = NULL;
+		free(*head);
+		*head = NULL;
+		return (1);
+	}
+	temp = *head;
+	if (index == 0 && (*head)->next != NULL)
+	{
+		temp2 = (*head)->next;
+		*head = temp2;
+		temp2->prev = NULL;
 		free(temp);
 		return (1);
 	}
-
-	while (i < index)
-	{
+	temp4 = *head;
+	for (i = 0; temp4->next != NULL; i++)
+		temp4 = temp4->next;
+	if (index > i)
+		return (-1);
+	for (j = 0; j < index - 1; j++)
 		temp = temp->next;
-		i++;
+	if (index == i)
+	{
+		temp2 = temp->next;
+		temp->next = NULL;
+		free(temp2);
+		return (1);
 	}
-
-	temp->prev->next = temp->next;
-	if (temp->next)
-		temp->next->prev = temp->prev;
-	free(temp);
-
+	temp2 = temp->next;
+	temp3 = temp->next->next;
+	temp->next = temp3;
+	temp3->prev = temp;
+	free(temp2);
 	return (1);
 }
