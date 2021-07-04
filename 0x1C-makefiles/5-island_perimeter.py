@@ -3,40 +3,21 @@
 
 
 def island_perimeter(grid):
-    '''Function to calclate the perymeter of and island'''
-    perymeter_per_unit = []
-    i = 0
-    j = 0
-    for row in grid:
-        j = 0
-        for value in row:
-            unit_perymeter = 0
+    '''Function to calculate the perimeter of and island'''
+    
+    perimeter = 0
+    length = len(grid) - 1
+    width = len(grid[0]) - 1
+
+    for i, row in enumerate(grid):
+        for j, value in enumerate(row):
             if value == 1:
-                try:
-                    if grid[i - 1][j] == 0:
-                        unit_perymeter += 1
-                except:
-                    pass
-
-                try:
-                    if grid[i + 1][j] == 0:
-                        unit_perymeter += 1
-                except:
-                    pass
-
-                try:
-                    if grid[i][j - 1] == 0:
-                        unit_perymeter += 1
-                except:
-                    pass
-
-                try:
-                    if grid[i][j + 1] == 0:
-                        unit_perymeter += 1
-                except:
-                    pass
-                perymeter_per_unit.append(unit_perymeter)
-            j += 1
-        i += 1
-
-    return sum(perymeter_per_unit)
+                if i == 0 or grid[i - 1][j] == 0:
+                    perimeter += 1
+                if i == length or grid[i + 1][j] == 0:
+                    perimeter += 1
+                if j == 0 or grid[i][j - 1] == 0:
+                    perimeter += 1
+                if j == width or grid[i][j + 1] == 0:
+                    perimeter += 1
+    return perimeter
