@@ -1,6 +1,7 @@
 #include "search_algos.h"
 
 /**
+ * linear_search - search a element in array
  * @value: number to search
  * @size: elements i the array
  * @array: POinter to the first
